@@ -5,14 +5,13 @@ Interview assessment exercise - Console application for calculating a simple loa
 
 in the terminal:
 1) Create you virtual environment: python -m venv .myenv
-2) Activeate the virtual environment: .\.myenv\scripts\activate.ps1
+2) Activate the virtual environment: .\.myenv\scripts\activate.ps1
 3) Install dependancies: pip install -e .
 
 
 
 #### Calculating a new loan 
-You will be asked to input the required fields, if they are not includded in the command
-No inputs: 
+You will be asked to input the required fields if they are not includded in the command line:
 ```sh
 $ \...\fy-oneiro-exercise python main calc_loan
 ```
