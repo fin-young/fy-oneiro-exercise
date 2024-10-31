@@ -11,8 +11,7 @@ in the terminal:
 
 
 #### Calculating a new loan 
-You will be asked to input the required fields, if they are not includded in the command
-No inputs: 
+You will be asked to input the required fields if they are not includded in the command line:
 ```sh
 $ \...\fy-oneiro-exercise python main calc_loan
 ```
