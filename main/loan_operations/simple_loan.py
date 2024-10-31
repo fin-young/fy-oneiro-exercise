@@ -50,6 +50,9 @@ class SimpleLoan(object):
                             currency: str,
                             base_ir: float,
                             margin: float)-> "SimpleLoan":   
+        
+        '''Main cration function to create a loan and validate/prompt input paramaters '''
+        
         #Validate Input Params
         start_date = Validations.validate_input_date(start_date, "start_date")
         end_date = Validations.validate_input_date(end_date, "end_date")
@@ -72,7 +75,7 @@ class SimpleLoan(object):
                 currency: str,
                 base_ir: float,
                 margin: float)-> "SimpleLoan":
-
+        ''' Instantiates class and calculates loan analytics'''
         #setup
         loan: SimpleLoan = SimpleLoan()
 
@@ -90,6 +93,15 @@ class SimpleLoan(object):
 
 
     def calculate_loan(self) -> None:
+        ''' Calculates the additional analytics on loan: 
+        
+        self.interest_amount_wo_margin: float   - #Accrued Interest from base rate, per day of the loan
+        self.interest_amount_accrued: float     - #Accrued Interest from base rate + margin, per day of the loan
+        self.accrual_date: date                 - #The date at which the loan becomes profitable; i.e. accumulated daily interest exceeds principle of loan
+        self.days_elapsed: int                  - #Days from the start date of the loan till the day of calculation (or end date, if end date < calculation date )
+        self.total_interest: float              - #Total Interest - The cost of borrowing/additional cost to the principle    
+        
+        '''
         
         total_rate = self.margin + self.base_ir
         term_yrs = self._calc_loan_term(self.start_date, self.end_date)
@@ -143,15 +155,6 @@ class SimpleLoan(object):
             fields_to_change = click.confirm("Would you like to change more input parameter before recalculating?")
 
 
-    def create_additional_loans() -> None:
-        pass
-
-    def save(self) -> None: 
-
-
-        pass
-
-
 
     #Internal Calculations
     @staticmethod
@@ -184,10 +187,6 @@ class SimpleLoan(object):
     @staticmethod
     def _calc_total_interest(principle:float, rate: float, term: float)-> float:
         return  principle * rate * term
-
-
-
-
 
 
 
