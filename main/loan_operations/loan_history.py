@@ -27,15 +27,20 @@ class LoanHistory(object):
         self.history_exists()
         memory = FileReader.read_csv(filepath=self.history_fpath)
         first = True
-        for row in memory:
-            if first:
-                first = False
-                pretty = PrettyTable(row)    
-                continue
         
-            pretty.add_row(row)
+        if len(memory) <= 1:
+             click.echo("There are no loans calculated previously")
         
-        click.echo(pretty)
+        else:
+            for row in memory:
+                if first:
+                    first = False
+                    pretty = PrettyTable(row)    
+                    continue
+            
+                pretty.add_row(row)
+            
+            click.echo(pretty)
 
 
     def show_all_loans(self):
