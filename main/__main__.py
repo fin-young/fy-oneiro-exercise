@@ -1,8 +1,8 @@
 from typing import Callable, Optional, List
 import click
 
-from engines.calc_loan import calc_loan
-from engines.update_loan import update_loan
+from main.engines.calc_loan import calc_loan
+from main.engines.update_loan import update_loan
 
 
 CONTEXT_SETTINGS = dict(auto_envvar_prefix="TODO")
