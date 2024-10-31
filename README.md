@@ -5,7 +5,7 @@ Interview assessment exercise - Console application for calculating a simple loa
 
 in the terminal:
 1) Create you virtual environment: python -m venv .myenv
-2) Activeate the virtual environment: .\.myenv\scripts\activate.ps1
+2) Activate the virtual environment: .\.myenv\scripts\activate.ps1
 3) Install dependancies: pip install -e .
 
 
